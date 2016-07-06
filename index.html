@@ -498,7 +498,7 @@
                     <section class="map-demo-e map-demo-slide"
                         data-style="rgb"
                         data-acquired-gte="2015-03-01"
-l                       data-acquired-lte="2015-03-30">
+                        data-acquired-lte="2015-03-30">
                         <p>Mar 2015</p>
                     </section>
 
@@ -583,11 +583,90 @@ l                       data-acquired-lte="2015-03-30">
 
                 <section>
                     <h2>Demo</h2>
-                    <p class="fragment">We're going to use an open source Ordering CLI tool</p>
-                    <p class="fragment"><a href="https://github.com/urthecast/ordering-cli-demo">https://github.com/urthecast/ordering-cli-demo</a></p>
-                    <p class="fragment">We're going to clip a Landsat 8 scene to our AOI</p>
-                    <p class="fragment"><a href="#" id="generate-order-command">Generate order command</a></p>
-                    <pre id="order-result"></pre>
+                </section>
+
+                <section id="order-demo" class="order-demo-slide">
+                    <p>We're going to order this beautiful scene of San Francisco</p>
+                </section>
+
+                <section id="order-demo-2" class="order-demo-slide">
+                    <p>...clipped to our AOI</p>
+                </section>
+
+                <section id="order-demo-3" class="order-demo-slide">
+                    <p>To begin, we must first create a new order:</p>
+                    <pre id="order-create-url"></pre>
+                    <a href="#" id="order-create-link">Create New Order</a>
+                    <pre id="order-create-status" class="status fade"></pre>
+                    <pre id="order-create-results" class="fade"></pre>
+                </section>
+
+                <section>
+                    <section id="order-demo-4" class="order-demo-slide">
+                        <p>Next, we create a new line item using our scene ID, AOI ID, and the desired bands we want included in the order:</p>
+                        <select id="order-bands" size="11" multiple>
+                            <option>red</option>
+                            <option>green</option>
+                            <option>blue</option>
+                            <option>pan</option>
+                            <option>near-ir</option>
+                            <option>near-ir-2</option>
+                            <option>short-wave-ir</option>
+                            <option>short-wave-ir-2</option>
+                            <option>long-wave-ir</option>
+                            <option>long-wave-ir-2</option>
+                            <option>coastal-blue</option>
+                        </select>
+                        <pre id="order-create-line-item-url" class="code-block code-block--big"></pre>
+                        <a href="#" id="order-create-line-item-link" class="fade">Create New Line Item</a>
+                    </section>
+
+                    <section id="order-demo-5" class="order-demo-slide">
+                        <pre id="order-create-line-item-status" class="status fade"></pre>
+                        <pre id="order-create-line-item-results" class="fade"></pre>
+                    </section>
+                </section>
+
+                <section id="order-demo-6" class="order-demo-slide">
+                    <p>Finally, we can purchase the order:</p>
+                    <pre id="order-purchase-url"></pre>
+                    <a href="#" id="order-purchase-link">Purchase Order</a>
+                    <pre id="order-purchase-status" class="status fade"></pre>
+                    <pre id="order-purchase-results" class="fade"></pre>
+                </section>
+
+                <section>
+                    <section id="order-demo-7" class="order-demo-slide">
+                        <p>Once the status of your order is marked as delivered, it is ready to be downloaded:</p>
+                        <pre id="order-status-url"></pre>
+                        <a href="#" id="order-status-link">Check Order Status</a>
+                        <pre id="order-status-results" class="fade"></pre>
+                        <pre id="order-status-note" class="fade">Your order is still processing. The status will automatically refresh every 15 seconds. It may take up to 5 minutes to process depending on the number of bands selected.</pre>
+                        <a href="#" id="order-delivery-link" class="fade">Get Download URL</a>
+                    </section>
+
+                    <section id="order-demo-8" class="order-demo-slide">
+                        <pre id="order-download-url" class="fade"></pre>
+                        <pre id="order-delivery-results" class="fade"></pre>
+                        <a href="#" id="order-download-link" class="fade">Download Order</a>
+                    </section>
+                </section>
+
+                <section id="order-demo-9" class="order-demo-slide">
+                    <p>After your order is downloaded, extract the file and import the bands into your GIS program of choice for analysis</p>
+                </section>
+
+                <section id="order-demo-10" class="order-demo-slide">
+                    <p>Additionally, we offer an open-source CLI tool to help automate ordering:</p>
+                    <a href="https://github.com/urthecast/ordering-cli-demo" target="_blank">https://github.com/urthecast/ordering-cli-demo</a>
+                    <div class="fragment">
+                        <p>Use the command below to place an order for the same scene, clipped to our AOI, for all available bands -- in one easy and convenient step:</p>
+                        <pre id="order-tool-command"></pre>
+                    </div>
+                </section>
+
+                <section id="order-demo-11" class="order-demo-slide">
+                    <p>Enjoy!</p>
                 </section>
 
                 <!-- Data conclusion -->

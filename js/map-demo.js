@@ -59,7 +59,7 @@ Reveal.addEventListener( 'slidechanged', function( event ) {
         var acquiredLTE = event.currentSlide.getAttribute('data-acquired-lte');
         var acquiredGTE = event.currentSlide.getAttribute('data-acquired-gte');
         createLayer("https://tile-{s}.urthecast.com/v1/" + style + "/{z}/{x}/{y}?api_key=" + apiKey + "&api_secret=" + apiSecret + "&acquired_lte=" + acquiredLTE + "&acquired_gte=" + acquiredGTE + "&cloud_coverage_lte=20");
-    } else {
+    } else if (!event.currentSlide.classList.contains('map-demo-slide') && !event.currentSlide.classList.contains('order-demo-slide')) {
         cleanupMap();
     }
 

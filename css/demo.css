@@ -23,12 +23,65 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+.reveal .fade {
+  -webkit-transition: opacity 0.35s ease;
+  transition: opacity 0.35s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.reveal .fade.in {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.reveal pre.fade {
+  height: 200px; /* Take up a fixed amount vertical space in the slide when hidden */
+}
+
+.reveal pre.fade.in {
+  height: auto; /* Switch to actual height when visible */
+}
+
+.reveal pre.status {
+  height: 20px !important;
+  text-align: center;
 }
 
 .map-demo-slide p {
   background: rgba(0, 0, 0, .5);
   opacity: .75;
+}
+
+.order-demo-slide p,
+.order-demo-slide pre {
+  background: rgba(0, 0, 0, .5);
+  opacity: 1;
+  padding: 2px 5px;
+}
+
+#order-demo-bands {
+  display: block;
+  margin: 0 auto 40px;
+}
+
+#order-status-results.not-delivered {
+  background: rgba(50, 0, 0, .5);
+}
+
+#order-status-results.delivered {
+  background: rgba(0, 50, 0, .5);
+}
+
+#order-status-note {
+  height: auto;
+}
+
+#order-tool-command {
+  display: inline;
 }
 
 #explore-demo {
@@ -81,6 +134,7 @@ body {
 .reveal section .leaflet-map-pane {
     border: 1px solid #000;
 }
+
 .reveal section .leaflet-map-pane img {
     margin: auto;
     background: none;
